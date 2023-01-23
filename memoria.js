@@ -134,9 +134,13 @@ function buttOnClik(evt){
         const resultado = verificarMAtchCasillas(casillaTemporal, casilla)
         //Si es resultado es verdadero, significa que son las mismas... hubo macth
         if(resultado==false){
-            //Si fue falso, ocultan las casillas
-            casillaTemporal.visible = false
-            casilla.visible = false
+            //Espere un tiempo para hacer algo =>setTimeout
+            setTimeout(()=>{
+                //Si fue falso, ocultan las casillas
+                casilla.visible = false
+                casillaTemporal.visible = false
+                renderizarBoard(board)
+            }, 750);
         }
     }
     renderizarBoard(board)
